@@ -3,26 +3,20 @@
 #include <string.h>
 #include<locale.h>
 
-// Pim - Grupo 01 //
-// 02410039666 – Gabriel Nathan Tavares Meneses
-// 02410037979 – Guilherme da Silva Almeida
-// 02410038245 – Luiz Gustavo Rodrigues
-// 02410039033 - Matheus Alves de Oliveira
-// 02410039092 - William 
-
+//Desenvolvido por Matheus Alves e Emanuel Ferreira //
     typedef struct {
 
 
-        char login[30];   // Este char apenas faz referência a um vetor para a struct;
-        char senha[30];      // Este char apenas faz referência a um vetor para a struct;
+        char login[30];   // Este char apenas faz referÃªncia a um vetor para a struct;
+        char senha[30];      // Este char apenas faz referÃªncia a um vetor para a struct;
         char cep[50];
         char Nome[50];
         double Telefone[50];
 
-    } admin; admin ad[1]; // Determinamos apenas uma pessoa correspondente ao acesso às informações do cadastro/agendamento/cancelamento. Este usuário é o administrador da rede.
+    } admin; admin ad[1]; // Determinamos apenas uma pessoa correspondente ao acesso Ã s informaÃ§Ãµes do cadastro/agendamento/cancelamento. Este usuÃ¡rio Ã© o administrador da rede.
 
     void Prontuario() {
-        //Criar variável 
+        //Criar variÃ¡vel 
         FILE* pont_arq;
         char Nome[30];
         char Sobrenome[30];
@@ -60,7 +54,7 @@
 
         fclose(pont_arq);
 
-        printf("\n O arquivo texto com as informações indicadas no Prontuario foi criado com Sucesso! \n");
+        printf("\n O arquivo texto com as informaÃ§Ãµes indicadas no Prontuario foi criado com Sucesso! \n");
 
         getchar();
     }
@@ -88,22 +82,22 @@
         printf("\n A unidade de Atendimento selecionada foi: %s\n", unidade);
 
 
-        for (i = 0; i < 5; i++) { //são 5 dias uteis
-            printf("Digite o valor correspondente ao rendimento diário: R$", i+1);
+        for (i = 0; i < 5; i++) { //sÃ£o 5 dias uteis
+            printf("Digite o valor correspondente ao rendimento diÃ¡rio: R$", i+1);
             scanf("%f", &n[i]);
             fprintf(pont_arq, "%f""\n", n[i]);
 
             semana = n[i-4] + n[i-3] + n[i-2] + n[i-1] + n[i];
         }
         
-        mensal = semana * 4; // foi se atribuido 4 vezes a soma semanal para facilitar o processo, já que não há um banco de dados.
+        mensal = semana * 4; // foi se atribuido 4 vezes a soma semanal para facilitar o processo, jÃ¡ que nÃ£o hÃ¡ um banco de dados.
         
         printf("O rendimento semanal desta Unidade foi: R$ %f \n", semana);
         printf("O rendimento mensal desta Unidade foi: R$ %f \n", mensal);
         
         fclose(pont_arq);
 
-        printf("\n O arquivo texto com as informações indicadas no Rendimento por Unidade foi criado com Sucesso! \n");
+        printf("\n O arquivo texto com as informaÃ§Ãµes indicadas no Rendimento por Unidade foi criado com Sucesso! \n");
 
         getchar();
 
@@ -115,14 +109,14 @@
         float n[5] = { 0 }, semana = 0, mensal = 0;
         int i;
 
-        for (i = 0; i < 5; i++) { //são 5 dias uteis
-            printf("Digite o valor correspondente ao rendimento diário: R$", i+1);
+        for (i = 0; i < 5; i++) { //sÃ£o 5 dias uteis
+            printf("Digite o valor correspondente ao rendimento diÃ¡rio: R$", i+1);
             scanf("%f", &n[i]);
 
             semana = n[i-4] + n[i-3] + n[i-2] + n[i-1] + n[i];
         }
         
-        mensal = semana * 4; // foi se atribuido 4 vezes a soma semanal para facilitar o processo, já que não há um banco de dados.
+        mensal = semana * 4; // foi se atribuido 4 vezes a soma semanal para facilitar o processo, jÃ¡ que nÃ£o hÃ¡ um banco de dados.
         
         printf("O rendimento semanal desta Unidade foi: R$ %f \n", semana);
         printf("O rendimento mensal desta Unidade foi: R$ %f \n", mensal);
@@ -133,7 +127,7 @@
 
     void Agendamento() {
 
-        //Criar variável 
+        //Criar variÃ¡vel 
         FILE* pont_arq;
         char Nome[30];
         char Sobrenome[30];
@@ -166,7 +160,7 @@
         scanf("%s", &Mes);
         fprintf(pont_arq, "%s""\n", Mes);
         
-        printf("\n Horário de Agendamento (Hs): \n");
+        printf("\n HorÃ¡rio de Agendamento (Hs): \n");
         scanf("%s", &hora);
         fprintf(pont_arq, "%s""\n", hora);
         
@@ -202,7 +196,7 @@
         }
 
        printf("\n Digite o primeiro Nome do Paciente: ");
-       scanf("%s", &Nome); // Usuário relacionado ao vetor senha contido na função principal (main)
+       scanf("%s", &Nome); // UsuÃ¡rio relacionado ao vetor senha contido na funÃ§Ã£o principal (main)
        fprintf(pont_arq, "%s""\t", Nome);
 
 
@@ -224,7 +218,7 @@
         fclose(pont_arq);
 
 
-        printf("\n As informações foram armazenadas no arquivo texto com Sucesso! \n ");
+        printf("\n As informaÃ§Ãµes foram armazenadas no arquivo texto com Sucesso! \n ");
 
 
         getchar();
@@ -250,17 +244,17 @@
         }
 
         printf("\n Digite o primeiro Nome do Paciente: ");
-        scanf("%s", &Nome); // Usuário relacionado ao vetor senha contido na função principal (main)
+        scanf("%s", &Nome); // UsuÃ¡rio relacionado ao vetor senha contido na funÃ§Ã£o principal (main)
         fprintf(pont_arq, "%s""\t", Nome);
 
         printf("\n Digite o Sobrenome do Paciente: ");
         scanf("%s", &Sobrenome1);
         fprintf(pont_arq, "%s""\t", Sobrenome1);
 
-       // printf("\n Nome Completo do Paciente: %s %s\n",Nome, Sobrenome1); //%s para saída
+       // printf("\n Nome Completo do Paciente: %s %s\n",Nome, Sobrenome1); //%s para saÃ­da
 
         printf("\n Informe o CEP do Paciente: ");
-        scanf("%s", cep); // Usuário relacionado ao vetor login contido na função principal (main)
+        scanf("%s", cep); // UsuÃ¡rio relacionado ao vetor login contido na funÃ§Ã£o principal (main)
         fprintf(pont_arq, "%s""\t", cep);
 
         printf("\n Telefone do Paciente: ");
@@ -270,7 +264,7 @@
         fclose(pont_arq);
 
 
-        printf("\n As informações foram armazenadas no arquivo texto com Sucesso! \n ");
+        printf("\n As informaÃ§Ãµes foram armazenadas no arquivo texto com Sucesso! \n ");
 
 
         getchar();
@@ -297,20 +291,20 @@
         }
 
         printf("\n Digite o primeiro Nome do Medico: ");
-        scanf("%s", &Nome); // Usuário relacionado ao vetor senha contido na função principal (main)
+        scanf("%s", &Nome); // UsuÃ¡rio relacionado ao vetor senha contido na funÃ§Ã£o principal (main)
         fprintf(pont_arq, "%s""\t", Nome);
 
         printf("\n Digite o Sobrenome do Medico: ");
         scanf("%s", &Sobrenome1);
         fprintf(pont_arq, "%s""\t", Sobrenome1);
 
-        // printf("\n Nome Completo do Paciente: %s %s\n",Nome, Sobrenome1); //%s para saída
+        // printf("\n Nome Completo do Paciente: %s %s\n",Nome, Sobrenome1); //%s para saÃ­da
 
         printf("\n");
 
 
         printf("\n Informe o CEP do Medico: ");
-        scanf("%s", cep); // Usuário relacionado ao vetor login contido na função principal (main)
+        scanf("%s", cep); // UsuÃ¡rio relacionado ao vetor login contido na funÃ§Ã£o principal (main)
         fprintf(pont_arq, "%s""\t", cep);
 
         printf("\n Telefone do Medico: ");
@@ -320,7 +314,7 @@
         fclose(pont_arq);
 
 
-        printf("\n As informações foram armazenadas no arquivo texto com Sucesso! \n ");
+        printf("\n As informaÃ§Ãµes foram armazenadas no arquivo texto com Sucesso! \n ");
 
 
         getchar();
@@ -328,11 +322,11 @@
     } //fimm do cadastro
 
 
-    // Não será necessário, mas irei deixar separado para um código futuro.
+    // NÃ£o serÃ¡ necessÃ¡rio, mas irei deixar separado para um cÃ³digo futuro.
     /*void Login() {
 
-        char login[30];   // Este char apenas faz referência a um vetor para a struct;
-        char senha[30];      // Este char apenas faz referência a um vetor para a struct;
+        char login[30];   // Este char apenas faz referÃªncia a um vetor para a struct;
+        char senha[30];      // Este char apenas faz referÃªncia a um vetor para a struct;
 
         // Criando o acesso;
 
@@ -341,10 +335,10 @@
         strcpy(ad[0].senha, "pim"); // Atribuindo valor a senha como "pim"
 
         printf("\n Login: ");
-        scanf("%s", login); // Usuário relacionado ao vetor login contido na função principal (main)
+        scanf("%s", login); // UsuÃ¡rio relacionado ao vetor login contido na funÃ§Ã£o principal (main)
 
         printf("\n Senha: ");
-        scanf("%s", senha); // Usuário relacionado ao vetor senha contido na função principal (main)
+        scanf("%s", senha); // UsuÃ¡rio relacionado ao vetor senha contido na funÃ§Ã£o principal (main)
 
         if ((strcmp(login, ad[0].login) == 0)
             &&
@@ -356,7 +350,7 @@
 
         }
         else {
-            printf("\nTente novamente\n Login e/ou Senha não correspondem \n");
+            printf("\nTente novamente\n Login e/ou Senha nÃ£o correspondem \n");
 
         }
     }*/
@@ -365,8 +359,8 @@
     void Login_admin() {
 
         int menu_admin;
-        char login[30];   // Este char apenas faz referência a um vetor para a struct;
-        char senha[30];      // Este char apenas faz referência a um vetor para a struct;
+        char login[30];   // Este char apenas faz referÃªncia a um vetor para a struct;
+        char senha[30];      // Este char apenas faz referÃªncia a um vetor para a struct;
 
         // Criando o acesso;
 
@@ -375,10 +369,10 @@
         strcpy(ad[0].senha, "pim"); // Atribuindo valor a senha como "pim"
 
         printf("\n Login: ");
-        scanf("%s", login); // Usuário relacionado ao vetor login contido na função principal (main)
+        scanf("%s", login); // UsuÃ¡rio relacionado ao vetor login contido na funÃ§Ã£o principal (main)
 
         printf("\n Senha: ");
-        scanf("%s", senha); // Usuário relacionado ao vetor senha contido na função principal (main)
+        scanf("%s", senha); // UsuÃ¡rio relacionado ao vetor senha contido na funÃ§Ã£o principal (main)
 
         if ((strcmp(login, ad[0].login) == 0)
             &&
@@ -391,7 +385,7 @@
             do {
                 printf("\nOi, Admin.\n \n \n\n" );
                     printf("1.Cadastro Paciente \n 2.Cadastro Medico \n 3.Agendamento \n 4.Ficha Paciente \n 5.Unidade & Rendimento \n 6.Sair \n");
-                printf("\nSelecione sua opção: ");
+                printf("\nSelecione sua opÃ§Ã£o: ");
 
 
                 scanf("%d", &menu_admin);
@@ -438,7 +432,7 @@
           
         }
         else {
-            printf("\nTente novamente\n Login e/ou Senha não correspondem \n");
+            printf("\nTente novamente\n Login e/ou Senha nÃ£o correspondem \n");
 
         }
         
@@ -447,8 +441,8 @@
     void Login_Medico() {
 
         int menu_med;
-        char login[30];   // Este char apenas faz referência a um vetor para a struct;
-        char senha[30];      // Este char apenas faz referência a um vetor para a struct;
+        char login[30];   // Este char apenas faz referÃªncia a um vetor para a struct;
+        char senha[30];      // Este char apenas faz referÃªncia a um vetor para a struct;
 
         // Criando o acesso;
 
@@ -457,10 +451,10 @@
         strcpy(ad[0].senha, "pim"); // Atribuindo valor a senha como "pim"
 
         printf("\n Login: ");
-        scanf("%s", login); // Usuário relacionado ao vetor login contido na função principal (main)
+        scanf("%s", login); // UsuÃ¡rio relacionado ao vetor login contido na funÃ§Ã£o principal (main)
 
         printf("\n Senha: ");
-        scanf("%s", senha); // Usuário relacionado ao vetor senha contido na função principal (main)
+        scanf("%s", senha); // UsuÃ¡rio relacionado ao vetor senha contido na funÃ§Ã£o principal (main)
 
         if ((strcmp(login, ad[0].login) == 0)
             &&
@@ -472,7 +466,7 @@
 
             do {
                 printf("\nOi, Medico.\n \n \n\n");
-                printf("\nSelecione a opcao que deseja: \n 1.Ficha do Paciente \n 2.Agendamento \n 3.Prontuário \n 4.Sair\n");
+                printf("\nSelecione a opcao que deseja: \n 1.Ficha do Paciente \n 2.Agendamento \n 3.ProntuÃ¡rio \n 4.Sair\n");
 
 
                 scanf("%d", &menu_med);
@@ -488,7 +482,7 @@
                     break;
 
                 case 3:
-                    // Prontuário
+                    // ProntuÃ¡rio
                     Prontuario();
 
                     break;
@@ -505,7 +499,7 @@
 
         }
         else {
-            printf("\nTente novamente\n Login e/ou Senha não correspondem \n");
+            printf("\nTente novamente\n Login e/ou Senha nÃ£o correspondem \n");
 
         }
 
@@ -515,10 +509,10 @@
         setlocale(LC_ALL, "Portuguese");
 
 
-        printf("Reclamações ou Cancelamento de Consultas.");
+        printf("ReclamaÃ§Ãµes ou Cancelamento de Consultas.");
 
         printf("\n Envie sua proposta em: ");
-        printf("\n e-mail: minhaclínica@gmail.com");
+        printf("\n e-mail: minhaclÃ­nica@gmail.com");
         printf("\n Entre em contato: [DDD]XXXX-XXXX");
         printf("\n Site: www.minhaclinica.com.br");
 
@@ -542,9 +536,9 @@
 
         do {
            // system("cls");
-            printf("\nSeja bem vindo à nossa clínica.\n \n \n");
+            printf("\nSeja bem vindo Ã  nossa clÃ­nica.\n \n \n");
             printf("1.Adminstrador\n2.Medico \n3.FaQ \n4.Sair \n");
-            printf("\nSelecione sua opção: \n");
+            printf("\nSelecione sua opÃ§Ã£o: \n");
 
 
             scanf("%d", &menu);
@@ -577,14 +571,14 @@
                 break;
 
             case 4:
-                printf("\nObrigado! Até mais!\n");
+                printf("\nObrigado! AtÃ© mais!\n");
                 exit(menu);
                 
             default:
 
-                //Redirecionando para as opções
+                //Redirecionando para as opÃ§Ãµes
 
-                printf("\nAperte uma Key Válida! Tente Novamente...\n");
+                printf("\nAperte uma Key VÃ¡lida! Tente Novamente...\n");
 
                 break;
 
